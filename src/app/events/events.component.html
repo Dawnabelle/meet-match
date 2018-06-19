@@ -1,17 +1,19 @@
-<div class="event-date">
-  <h2>Monday, June 18th</h2>
-</div>
+<div *ngFor="let date of dates">
+  <div class="event-date">
+    <h2>{{date}}</h2>
+  </div>
 
-<div class="event-info" *ngFor="let event of events">
-  <div class="event-title">
-    <h4>{{ event.name }}</h4>
-  </div>
-  <div class="event-location-time">
-    <div class="location">
-      <h4>{{ event.venue.name}}</h4>
+  <!-- <div class="event-info" *ngFor="let event of events">
+    <div class="event-title">
+      <h4>{{ event.name }}</h4>
     </div>
-    <div class="time">
-      <h4>{{ event.local_date}}</h4>
+    <div class="event-location-time">
+      <div class="location">
+        <h4>{{ event.venue.name}}</h4>
+      </div>
+      <div class="time">
+        <h4>{{ event.local_date}}</h4>
+      </div>
     </div>
-  </div>
+  </div> -->
 </div>
