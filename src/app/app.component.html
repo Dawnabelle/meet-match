@@ -1,18 +1,21 @@
-<nav>
-    <h3>MeetMatch</h3>
-    <a routerLink="/all-events">All Events</a>
-    <a routerLink="/my-events">My Events</a>
-    <a routerLink="/friends">Friends</a>
+<nav class="nav">
+  <h1>Meet Match</h1>
+  <a routerLink="/all-events">All Events</a>
+  <a routerLink="/my-events">My Events</a>
+  <a routerLink="/friends">Friends</a>
+  <input class="search" type="text" name="search" placeholder="Search">
+  <img src="assets/burger.png">
 </nav>
 
-<h1>{{title}}</h1>
+<!-- <h1>{{title}}</h1> -->
 
-<div class="">
+<div class="map">
   <agm-map [latitude]="lat" [longitude]="lon" [styles]="styles">
     <agm-marker [latitude]="epiLat" [longitude]="epiLon"></agm-marker>
   </agm-map>
 </div>
 
-<div class="">
+
+<div class="application-container">
   <router-outlet></router-outlet>
 </div>

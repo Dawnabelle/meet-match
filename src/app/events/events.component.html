@@ -1,15 +1,17 @@
-<p> events works!</p>
-<ul>
-  <li *ngFor="let event of events">
-    {{ event.name }}
-    <span>
-      {{ event.venue.name}}
-    </span>
-    <span>
-      {{ event.local_date}}
-    </span>
-    <span>
-      {{ event.local_time}}
-    </span>
-  </li>
-</ul>
+<div class="event-date">
+  <h2>Monday, June 18th</h2>
+</div>
+
+<div class="event-info" *ngFor="let event of events">
+  <div class="event-title">
+    <h4>{{ event.name }}</h4>
+  </div>
+  <div class="event-location-time">
+    <div class="location">
+      <h4>{{ event.venue.name}}</h4>
+    </div>
+    <div class="time">
+      <h4>{{ event.local_date}}</h4>
+    </div>
+  </div>
+</div>
