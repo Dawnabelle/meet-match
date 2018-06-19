@@ -9,7 +9,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class apiService {
+export class ApiService {
     USER_URL = 'https://pdxmeetups.herokuapp.com/api';
     MEETUPS_URL = `https://api.meetup.com/find/upcoming_events?photo-host=public&topic_category=34&page=20&text=`;
     constructor(private http:HttpClient) {}
