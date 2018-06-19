@@ -1,14 +1,14 @@
-<main>
-  <section>
-    <h1>{{title}}</h1>
+<nav>
+  <h3>MeetMatch</h3>
+  <a routerLink="/all-events">All Events</a>
+  <a routerLink="/my-events">My Events</a>
+  <a routerLink="/friends">Friends</a>
+</nav>
 
-    <agm-map [latitude]="lat" [longitude]="lon" [styles]="styles">
-      <agm-marker [latitude]="epiLat" [longitude]="epiLon"></agm-marker>
-    </agm-map>
-  </section>
+<h1>{{title}}</h1>
 
-  <!-- <section>
-    <router-outlet></router-outlet>
-  </section> -->
+<agm-map [latitude]="lat" [longitude]="lon" [styles]="styles">
+  <agm-marker [latitude]="epiLat" [longitude]="epiLon"></agm-marker>
+</agm-map>
 
-</main>
+<router-outlet></router-outlet>
