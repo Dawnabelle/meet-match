@@ -14,7 +14,7 @@ export class ApiService {
     MEETUPS_URL = `https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=-122.6587&topic_category=34&page=20`;
     constructor(private http: HttpClient) {}
     private keyword : String = "";
-    private key: String = "261c3742f2c302661419493d5f5824";
+    private key: String = "1987d7e31d25226a76c7a416b2e31";
 
     getEvents() {
       return this.http.get(`${this.MEETUPS_URL}&text=${this.keyword}&key=${this.key}`) // Calls Meetup API
