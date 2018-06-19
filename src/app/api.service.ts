@@ -18,10 +18,10 @@ export class ApiService {
     sig: String = "53a911c54a8d172e98264d9bb8ea3f2f88f99e70";
 
     getEvents() {
-        return forkJoin(
-            this.http.get(`${this.MEETUPS_URL}${this.keyword}&sig_id=${this.sigId}&sig=${this.sig}`), // Meetup API
-            this.http.get(`${this.USER_URL}/users`) // User API
-            // this.http.get('') // GoogleMaps API
-        );
+      this.http.get(`${this.MEETUPS_URL}${this.keyword}&sig_id=${this.sigId}&sig=${this.sig}`) // Calls Meetup API
+    }
+
+    getUsers() {
+      this.http.get(`${this.USER_URL}/users`) // User API
     }
 }
