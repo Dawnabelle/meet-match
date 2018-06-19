@@ -17,7 +17,7 @@ export class ApiService {
     sigId: String = "231200293";
     sig: String = "53a911c54a8d172e98264d9bb8ea3f2f88f99e70";
 
-    makeCalls() {
+    getEvents() {
         return forkJoin(
             this.http.get(`${this.MEETUPS_URL}${this.keyword}&sig_id=${this.sigId}&sig=${this.sig}`), // Meetup API
             this.http.get(`${this.USER_URL}/users`) // User API
