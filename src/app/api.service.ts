@@ -14,7 +14,7 @@ export class apiService {
     makeCalls() {
         return forkJoin(
             this.http.get(''), // Meetup API
-            this.http.get('') // User API
+            this.http.get(''), // User API
             this.http.get('') // GoogleMaps API
         );
     }
