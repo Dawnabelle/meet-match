@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { AgmCoreModule } from '@agm/core';
     })
   ],
   providers: [],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, EventsComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
