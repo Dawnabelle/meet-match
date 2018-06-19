@@ -7,7 +7,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class apiService {
+export class ApiService {
 
     constructor(private http:HttpClient) {}
 
