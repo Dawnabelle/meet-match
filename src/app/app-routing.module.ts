@@ -7,7 +7,7 @@ import { UserEventsComponent }      from './user-events/user-events.component';
 import { DetailsComponent }  from './details/details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/events', pathMatch: 'full' },
+  { path: '', redirectTo: '/all-events', pathMatch: 'full' },
   { path: 'all-events', component: EventsComponent },
   { path: 'my-events', component: UserEventsComponent },
   { path: 'details', component: DetailsComponent },

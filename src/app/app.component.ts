@@ -262,8 +262,4 @@ export class AppComponent {
         ]
     }
 ];
-
-  addEvent(event){
-
-  }
 }

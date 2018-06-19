@@ -2,16 +2,16 @@
   <h2>Monday, June 18th</h2>
 </div>
 
-<div class="event-info">
+<div class="event-info" *ngFor="let event of events">
   <div class="event-title">
-    <h4>Women Who Code Portland</h4>
+    <h4>{{ event.name }}</h4>
   </div>
   <div class="event-location-time">
     <div class="location">
-      <h4>Marquam</h4>
+      <h4>{{ event.venue.name}}</h4>
     </div>
     <div class="time">
-      <h4>5:30-8:30pm</h4>
+      <h4>{{ event.local_date}}</h4>
     </div>
   </div>
 </div>
