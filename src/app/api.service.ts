@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {forkJoin} from 'rxjs';
+import { forkJoin } from 'rxjs';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -11,14 +11,13 @@ const httpOptions = {
 })
 export class ApiService {
     USER_URL = 'https://pdxmeetups.herokuapp.com/api';
-    MEETUPS_URL = `https://api.meetup.com/find/upcoming_events?photo-host=public&topic_category=34&page=20&text=`;
-    constructor(private http:HttpClient) {}
-    keyword : String = "ruby";
-    sigId: String = "231200293";
-    sig: String = "53a911c54a8d172e98264d9bb8ea3f2f88f99e70";
+    MEETUPS_URL = `https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=-122.6587&topic_category=34&page=20`;
+    constructor(private http: HttpClient) {}
+    private keyword : String = "";
+    private key: String = "261c3742f2c302661419493d5f5824";
 
     getEvents() {
-      return this.http.get(`${this.MEETUPS_URL}${this.keyword}&sig_id=${this.sigId}&sig=${this.sig}`) // Calls Meetup API
+      return this.http.get(`${this.MEETUPS_URL}&text=${this.keyword}&key=${this.key}`) // Calls Meetup API
     }
 
     getUsers() {
