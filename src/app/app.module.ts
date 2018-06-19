@@ -8,6 +8,7 @@ import { AgmCoreModule } from '@agm/core';
 import { EventsComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
 import { FriendsComponent } from './friends/friends.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { FriendsComponent } from './friends/friends.component';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAN5uD_Uw7DzOv6HeG7n55IdeZdeZkKWiA'
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [],
   declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent ],
