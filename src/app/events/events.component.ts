@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 
 export class EventsComponent implements OnInit {
 
-private events: Array<object> = [];
+private events: Array<any> = [];
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -17,10 +17,14 @@ private events: Array<object> = [];
   }
 
   public getEvents() {
-    this.apiService.getEvents().subscribe((data: Array<object>) => {
-      this.events = data;
-      console.log(data);
+    this.apiService.getEvents().subscribe(res => {
+      console.log(res);
+      for (let i = 0; i < res['events'].length; i++) {
+        if (res['events'][i].venue != undefined){
+          this.events.push(res['events'][i]);
+          console.log(this.events);
+        }
+      }
     });
   }
-
 }
