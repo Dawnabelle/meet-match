@@ -6,17 +6,21 @@ import { ApiService } from '../api.service';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss']
 })
+
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+private events: Array<object> = [];
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.getEvents();
   }
 
   public getEvents() {
-    this.ApiService.getEvents().subscribe((data: Array<object>) => {
-    })
+    this.apiService.getEvents().subscribe((data: Array<object>) => {
+      this.events = data;
+      console.log(data);
+    });
   }
 
 }
