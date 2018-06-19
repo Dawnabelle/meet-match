@@ -1,3 +1,15 @@
-<p>
-  events works!
-</p>
+<p> events works!</p>
+<ul>
+  <li *ngFor="let event of events">
+    {{ event.name }}
+    <span>
+      {{ event.venue.name}}
+    </span>
+    <span>
+      {{ event.local_date}}
+    </span>
+    <span>
+      {{ event.local_time}}
+    </span>
+  </li>
+</ul>
