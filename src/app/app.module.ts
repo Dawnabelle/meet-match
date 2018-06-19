@@ -3,6 +3,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from  '@angular/common/http';
 
 import { AgmCoreModule } from '@agm/core';
 import { EventsComponent } from './events/events.component';
@@ -19,7 +20,8 @@ import { UserEventsComponent } from './user-events/user-events.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAN5uD_Uw7DzOv6HeG7n55IdeZdeZkKWiA'
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent],
