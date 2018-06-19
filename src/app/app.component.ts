@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
+import { ApiService } from './api.service';
 
 import { AgmCoreModule, MapTypeStyle } from '@agm/core';
 
@@ -261,4 +262,8 @@ export class AppComponent {
         ]
     }
 ];
+
+  addEvent(event){
+
+  }
 }

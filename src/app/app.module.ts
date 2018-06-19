@@ -9,6 +9,7 @@ import { EventsComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { UserEventsComponent } from './user-events/user-events.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule
   ],
   providers: [],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent],
+  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
