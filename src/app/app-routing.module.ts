@@ -7,13 +7,15 @@ import { DetailsComponent }  from './details/details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
-  { path: 'events', component: EventsComponent },
+  { path: 'all-events', component: EventsComponent },
+  { path: 'my-events', component: UserEventsComponent },
   { path: 'details', component: DetailsComponent },
   { path: 'friends', component: FriendsComponent }
+
 ];
 
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
