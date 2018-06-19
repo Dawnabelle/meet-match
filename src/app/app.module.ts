@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { EventsComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
+import { FriendsComponent } from './friends/friends.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { DetailsComponent } from './details/details.component';
     })
   ],
   providers: [],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent ],
+  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
