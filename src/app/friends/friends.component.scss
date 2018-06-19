@@ -1,8 +1,17 @@
+@import '../../sass/abstracts/mixins';
+
+
 .friend {
   width: 25%;
   text-align: center;
   margin-top: 50px;
   float: left;
+  @include mQ(600px) {
+    float: none;
+    width: 50%;
+    margin: auto;
+  }
+
 
   .friend-photo {
     width: 100%;
@@ -11,5 +20,23 @@
   img {
     width: 50%;
     border-radius: 50%;
+    // @include mQ(600px) {
+    //   border-radius: 0;
+    //   width: 50%;
+    // }
+
+    &:hover {
+      transform: scale(1.1) rotate(360deg);
+      transition: 0.5s;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    color: #FCD0A1;
   }
 }
