@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FriendsComponent }   from './friends/friends.component';
 import { EventsComponent }      from './events/events.component';
+import { UserEventsComponent }      from './user-events/user-events.component';
 import { DetailsComponent }  from './details/details.component';
 
 const routes: Routes = [
