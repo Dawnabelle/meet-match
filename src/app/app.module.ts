@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { EventsComponent } from './events/events.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { EventsComponent } from './events/events.component';
     })
   ],
   providers: [],
-  declarations: [ AppComponent, EventsComponent ],
+  declarations: [ AppComponent, EventsComponent, DetailsComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
