@@ -1,0 +1,15 @@
+.friend {
+  width: 25%;
+  text-align: center;
+  margin-top: 50px;
+  float: left;
+
+  .friend-photo {
+    width: 100%;
+  }
+
+  img {
+    width: 50%;
+    border-radius: 50%;
+  }
+}
