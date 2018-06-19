@@ -1,8 +1,13 @@
 @import '../../sass/abstracts/mixins';
+@import '../../sass/abstracts/variables';
 
 .event-date {
   color: white;
   padding-left: 4.2vw;
+  padding-top: 10px;
+  h2 {
+    font-family: $secondary-font;
+  }
 }
 
 .event-info {
@@ -24,8 +29,11 @@
 
   .event-title {
     padding-left: 20px;
-    @include mQ(700px) {
+    h4 {
       font-weight: bold;
+      }
+
+    @include mQ(700px) {
       // display: flex;
       // flex-wrap: wrap;
       line-height: 1.4em;
