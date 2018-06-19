@@ -21,7 +21,7 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule
   ],
   providers: [],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent ],
+  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
