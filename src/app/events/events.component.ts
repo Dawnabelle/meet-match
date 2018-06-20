@@ -64,7 +64,4 @@ export class EventsComponent implements OnInit {
     });
     return keyPresent;
   }
-
-
-
 }
