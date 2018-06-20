@@ -1,4 +1,5 @@
 @import '../sass/abstracts/mixins';
+@import '../sass/abstracts/variables';
 
 .nav {
   display: flex;
@@ -6,10 +7,13 @@
   color: white;
 
   h1 {
-    padding: 30px;
-    font-size: 2.2em;
+    padding: 20px 30px 30px 30px;
+    font-size: 2.7em;
     text-decoration: underline;
     text-underline-position: under;
+    font-family: $secondary-font;
+    font-weight: 100;
+    letter-spacing: 2px;
   }
 
   a {

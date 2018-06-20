@@ -7,7 +7,7 @@
 
 .event-info {
   display: flex;
-  margin:  auto;
+  margin:  10px auto;
   justify-content: space-between;
   width: 88vw;
   background-color: #EAA47B;
@@ -18,11 +18,19 @@
     line-height: 0em;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .event-title {
     padding-left: 20px;
     @include mQ(600px) {
       font-weight: bold;
     }
+  }
+
+   h4, h5 {
+    margin: 10px;
   }
 
   .event-location-time {
