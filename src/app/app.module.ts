@@ -12,6 +12,8 @@ import { FriendsComponent } from './friends/friends.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserEventsComponent } from './user-events/user-events.component';
 
+
+
 @NgModule({
   imports: [
     BrowserModule,

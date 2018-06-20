@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { ApiService } from '../api.service';
+
+import { EventsService } from '../events.service';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  providers: [ ApiService ]
+  providers: [ EventsService ]
 })
 export class DetailsComponent implements OnInit {
   eventId: string;
-  eventToDisplay: object;
+  eventToDisplay: Object;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private apiService: ApiService) { }
+    private eventsService: EventsService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.eventId = urlParameters['id'];
     });
-    this.eventToDisplay = this.apiService.getEventById(this.eventId);
+    this.eventToDisplay = this.eventsService.getEventById(this.eventId);
   }
 
 }
