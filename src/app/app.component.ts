@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
+import { NgModule, Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 
 import { AgmCoreModule, MapTypeStyle } from '@agm/core';
@@ -15,6 +15,8 @@ export class AppComponent {
   lon: number = -122.6587;
   epiLat: number = 45.5206;
   epiLon: number = -122.6774;
+
+  constructor(private apiService : ApiService) {  }
 
   styles: MapTypeStyle[] = [
     {
