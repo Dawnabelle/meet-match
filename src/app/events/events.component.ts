@@ -9,12 +9,11 @@ import { ApiService } from '../api.service';
 
 export class EventsComponent implements OnInit {
 
-  private events = new Map();
+  private events = new Object();
   private dates : Date[] = [];
   // private ascSort = function(date1 : Date, date2 : Date) {
   //   return date1.getTime() - date2.getTime();
   // };
-
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -31,20 +30,19 @@ export class EventsComponent implements OnInit {
           event.duration = new Date (endTime);
           event.local_date = new Date (event.local_date);
 
-          if (this.events[event.local_date] !== null && this.events[event.local_date] != undefined) {
-            if (!Array.isArray(this.events[event.local_date])){
-              let list = this.events[event.local_date];
-              this.events[event.local_date] = [list];
+          if (this.events[event.local_date.toString()] !== null && this.events[event.local_date.toString()] != undefined) {
+            if (!Array.isArray(this.events[event.local_date.toString()])){
+              let list = this.events[event.local_date.toString()];
+              this.events[event.local_date.toString()] = [list];
             }
-            this.events[event.local_date].push(event);
+            this.events[event.local_date.toString()].push(event);
           } else {
-              this.events[event.local_date] = event;
+              this.events[event.local_date.toString()] = [event];
               this.dates.push(event.local_date);
           }
         }
       });
     });
-    // this.dates.sort(this.ascSort);
     console.log(this.events);
     console.log(this.dates);
   }
@@ -52,6 +50,19 @@ export class EventsComponent implements OnInit {
   public reformatDates(date : Date) {
       let formattedDate: Date = new Date(date);
       return formattedDate.toDateString();
+  }
+
+  public checkKeys(date : Date) {
+    let monthDay: string = date.toString().slice(4, 11);
+    let eventKeys = Array.from(Object.keys(this.events));
+    let keyPresent: boolean = false;
+
+    eventKeys.forEach(key => {
+      if (key.match(monthDay)) {
+        keyPresent = true;
+      }
+    });
+    return keyPresent;
   }
 
 
