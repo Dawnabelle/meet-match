@@ -3,7 +3,7 @@
   <div class="event-date">
     <h2> {{ date | date }}</h2>
   </div>
-    <div routerLink="/details/{{ event.id }}" class="event-info" *ngFor="let event of events[date] (click)="goToDetailPage(event)">
+    <div routerLink="/details/{{ event.id }}" class="event-info" *ngFor="let event of savedEvents[date]" (click)="goToDetailPage(event)">
         <div class="event-title">
           <h4>{{ event.name }}</h4>
         </div>
