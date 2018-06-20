@@ -23,4 +23,12 @@ export class ApiService {
     getUsers() {
       return this.http.get(`${this.USER_URL}/users`) // User API
     }
+
+    getEventById(eventId: string) {
+      for (let i = 0; i <= Object.length - 1; i++) {
+        if (Object[i].id === eventId) {
+          return Object[i];
+        }
+      }
+    }
 }

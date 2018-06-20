@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/all-events', pathMatch: 'full' },
   { path: 'all-events', component: EventsComponent },
   { path: 'my-events', component: UserEventsComponent },
-  { path: 'details', component: DetailsComponent },
+  { path: 'details/:id', component: DetailsComponent },
   { path: 'friends', component: FriendsComponent }
 
 ];
