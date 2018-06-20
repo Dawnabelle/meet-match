@@ -1,6 +1,10 @@
-<div *ngFor="let date of dates">
-  <div class="event-date">
-    <h2>{{ date | date }}</h2>
+<div class="event-date">
+  <h2>Monday, June 18th</h2>
+</div>
+
+<div routerLink="/details" class="event-info" *ngFor="let event of events">
+  <div class="event-title">
+    <h4>{{ event.name }}</h4>
   </div>
 
   <div class="event-info" *ngIf ="checkKeys(date)">

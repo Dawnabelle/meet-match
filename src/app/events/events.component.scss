@@ -1,8 +1,13 @@
 @import '../../sass/abstracts/mixins';
+@import '../../sass/abstracts/variables';
 
 .event-date {
   color: white;
   padding-left: 4.2vw;
+  padding-top: 10px;
+  h2 {
+    font-family: $secondary-font;
+  }
 }
 
 .event-info {
@@ -11,17 +16,27 @@
   justify-content: space-between;
   width: 88vw;
   background-color: #EAA47B;
-  @include mQ(600px) {
+  @include mQ(700px) {
     display: inline-block;
     width: 100%;
     text-align: center;
     line-height: 0em;
   }
 
+  h4, h5 {
+    margin: 10px;
+  }
+
   .event-title {
     padding-left: 20px;
-    @include mQ(600px) {
+    h4 {
       font-weight: bold;
+      }
+
+    @include mQ(700px) {
+      // display: flex;
+      // flex-wrap: wrap;
+      line-height: 1.4em;
     }
   }
 
@@ -30,9 +45,9 @@
     width: 40vw;
     justify-content: space-between;
     padding-right: 20px;
-    @include mQ(600px) {
-    justify-content: space-between;
-    padding-left: 25px;
+    @include mQ(700px) {
+    justify-content: space-around;
+    // padding-left: 25px;
     width: 88vw;
     }
   }

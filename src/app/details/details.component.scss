@@ -1,0 +1,60 @@
+@import '../../sass/abstracts/mixins';
+
+.event-date {
+  color: white;
+  padding-left: 4.2vw;
+}
+
+.event-detail-container {
+  display: flex;
+  margin:  15px auto;
+  flex-direction: column;
+  width: 88vw;
+  background-color: #EAA47B;
+  border-radius: 5px;
+  @include mQ(600px) {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .top-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bottom-details {
+    padding: 15px 60px 50px 60px;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  h4, h5 {
+    margin: 10px;
+  }
+
+  .event-title {
+    padding-left: 20px;
+    @include mQ(600px) {
+      font-weight: bold;
+    }
+  }
+
+  .event-location-time {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    padding-right: 20px;
+    @include mQ(600px) {
+    justify-content: space-between;
+    padding-left: 25px;
+    width: 88vw;
+    }
+  }
+
+  .address-div {
+    flex-direction: column;
+  }
+}
