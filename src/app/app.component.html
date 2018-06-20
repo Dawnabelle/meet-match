@@ -3,7 +3,7 @@
   <a routerLink="/all-events">All Events</a>
   <a routerLink="/my-events">My Events</a>
   <a routerLink="/friends">Friends</a>
-  <input class="search" type="text" name="search" placeholder="Search">
+  <input class="search" type="text" ng-keyup="$event.keyCode == 13 && customSearch()" placeholder="Search">
   <img src="assets/burger.png">
 </nav>
 

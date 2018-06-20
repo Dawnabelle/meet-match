@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-events',
@@ -14,10 +15,14 @@ export class EventsComponent implements OnInit {
   // private ascSort = function(date1 : Date, date2 : Date) {
   //   return date1.getTime() - date2.getTime();
   // };
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.getEvents();
+  }
+
+  goToDetailPage(clickedEvent: object) {
+    this.router.navigate(['details/', clickedEvent['id']])
   }
 
   public getEvents() {
