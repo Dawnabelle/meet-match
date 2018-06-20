@@ -11,7 +11,7 @@ const httpOptions = {
 })
 export class ApiService {
     USER_URL = 'https://pdxmeetups.herokuapp.com/api';
-    MEETUPS_URL = `https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=-122.6587&topic_category=34&page=20`;
+    MEETUPS_URL = `https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=-122.6587&topic_category=34&page=50`;
     constructor(private http: HttpClient) {}
     private keyword : String = "";
     private key: String = "1987d7e31d25226a76c7a416b2e31";

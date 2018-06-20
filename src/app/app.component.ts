@@ -13,7 +13,6 @@ export class AppComponent {
   title = 'Map works!';
   lat: number = 45.5122;
   lon: number = -122.6587;
-
   epiLat: number = 45.5206;
   epiLon: number = -122.6774;
 
