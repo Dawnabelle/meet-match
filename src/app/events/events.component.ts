@@ -11,6 +11,10 @@ export class EventsComponent implements OnInit {
 
   private events = new Map();
   private dates : Date[] = [];
+  // private ascSort = function(date1 : Date, date2 : Date) {
+  //   return date1.getTime() - date2.getTime();
+  // };
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -19,30 +23,28 @@ export class EventsComponent implements OnInit {
 
   public getEvents() {
     this.apiService.getEvents().subscribe(res => {
-      for (let i = 0; i < res['events'].length; i++) {
-        if (res['events'][i].venue != undefined){
-          let endTime: number = parseInt(res['events'][i].time) + parseInt(res['events'][i].duration);
+      res['events'].forEach(event => {
+        if (event.venue != undefined){
+          let endTime: number = parseInt(event.time) + parseInt(event.duration);
 
-          res['events'][i].time = new Date (parseInt(res['events'][i].time));
-          res['events'][i].duration = new Date (endTime);
-          // res['events'][i].local_date = this.reformatDates(res['events'][i].local_date);
+          event.time = new Date (parseInt(event.time));
+          event.duration = new Date (endTime);
+          event.local_date = new Date (event.local_date);
 
-          if (this.events[res['events'][i].local_date] !== null && this.events[res['events'][i].local_date] != undefined) {
-            if (!Array.isArray(this.events[res['events'][i].local_date])){
-              let list = this.events[res['events'][i].local_date];
-              this.events[res['events'][i].local_date] = [list];
+          if (this.events[event.local_date] !== null && this.events[event.local_date] != undefined) {
+            if (!Array.isArray(this.events[event.local_date])){
+              let list = this.events[event.local_date];
+              this.events[event.local_date] = [list];
             }
-            this.events[res['events'][i].local_date].push(res['events'][i]);
+            this.events[event.local_date].push(event);
           } else {
-              this.events[res['events'][i].local_date] = res['events'][i];
-              this.dates.push(new Date(res['events'][i].local_date));
+              this.events[event.local_date] = event;
+              this.dates.push(event.local_date);
           }
         }
-      }
+      });
     });
-    this.dates.sort(function(date1,date2) {
-      return date1.getTime() - date2.getTime();
-    });
+    // this.dates.sort(this.ascSort);
     console.log(this.events);
     console.log(this.dates);
   }
@@ -51,5 +53,7 @@ export class EventsComponent implements OnInit {
       let formattedDate: Date = new Date(date);
       return formattedDate.toDateString();
   }
+
+
 
 }
