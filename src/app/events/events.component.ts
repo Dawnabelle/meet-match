@@ -14,6 +14,7 @@ import { EventsService } from '../events.service';
 export class EventsComponent implements OnInit {
   private savedEvents : Object;
   private dates: Date[];
+  private eventDetails: Object[] = [];
 
   constructor(private apiService: ApiService, private router: Router, private eventsService: EventsService) { }
 
@@ -21,11 +22,9 @@ export class EventsComponent implements OnInit {
     this.apiService.saveEvents();
     this.savedEvents = this.eventsService.getEvents();
     this.dates = this.eventsService.getDates();
-    console.log(this.savedEvents);
   }
 
   goToDetailPage(clickedEvent: object) {
     this.router.navigate(['details/', clickedEvent['id']])
   }
-
 }

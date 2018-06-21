@@ -1,0 +1,23 @@
+<div class="event-info">
+  <div class="top-details">
+    <div class="event-title">
+      <h4>{{ childEvent.name }}</h4>
+      <h5 *ngIf="hiddenInfo">{{ childEvent.venue.address_1}} {{ childEvent.venue.city}}, {{childEvent.venue.state}} {{childEvent.venue.zip}}</h5>
+    </div>
+    <div class="event-location-time">
+      <div class="location">
+        <h4>{{ childEvent.venue.name}}</h4>
+      </div>
+      <div class="time">
+        <h4>{{ childEvent.local_date | date}}</h4>
+        <p (click)="toggleShow()">Show More/Less</p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-details" *ngIf="hiddenInfo">
+    <div [innerHTML]="childEvent.description" class="event-details" *ngIf="hiddenInfo">
+      <h4>Event Details:</h4>
+      {{childEvent.description}}
+    </div>
+  </div>
+</div>
