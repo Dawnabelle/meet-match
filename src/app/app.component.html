@@ -10,8 +10,22 @@
 <!-- <h1>{{title}}</h1> -->
 
 <div class="map">
-  <agm-map [latitude]="lat" [longitude]="lon" [styles]="styles">
-    <agm-marker [latitude]="epiLat" [longitude]="epiLon"></agm-marker>
+  <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="zoom">
+    <agm-marker *ngFor="let marker of markers"
+    [latitude]="marker.lat"
+    [longitude]="marker.lng"
+    [iconUrl] = "marker.iconUrl"
+    ></agm-marker>
+    <agm-marker *ngFor="let marker of userMarkers"
+    [latitude]="marker.lat"
+    [longitude]="marker.lng"
+    [iconUrl] = "marker.iconUrl"
+    ></agm-marker>
+    <agm-marker *ngFor="let marker of friendMarkers"
+    [latitude]="marker.lat"
+    [longitude]="marker.lng"
+    [iconUrl] = "marker.iconUrl"
+    ></agm-marker>
   </agm-map>
 </div>
 

@@ -1,23 +1,45 @@
+import { NgModule, Component, OnInit, Directive, Input, EventEmitter } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component, OnInit } from '@angular/core';
-import { ApiService } from './api.service';
-
 import { AgmCoreModule, MapTypeStyle } from '@agm/core';
+import { Observable } from 'rxjs';
+
+import { ApiService } from './api.service';
+import { EventsService } from './events.service';
+import { UserService } from './user.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [ApiService]
 })
-export class AppComponent {
-  title = 'Map works!';
-  lat: number = 45.5122;
-  lon: number = -122.6587;
-  epiLat: number = 45.5206;
-  epiLon: number = -122.6774;
+export class AppComponent implements OnInit {
 
-  constructor(private apiService : ApiService) {  }
+  private savedEvents : Object;
+  private users: Object[];
 
+  zoom: number = 13;
+  lat: number = 45.522;
+  lng: number = -122.6587;
+  markers: marker[] = [];
+  friendMarkers: marker[] = [];
+  userMarkers: marker[] = [];
+
+
+  constructor(
+    private apiService: ApiService,
+    private eventsService: EventsService,
+    private userService : UserService
+) {  }
+
+
+  ngOnInit() {
+    this.apiService.saveEvents();
+    this.markers = this.eventsService.getMarkers();
+    this.userMarkers = this.eventsService.getUserMarkers();
+    this.friendMarkers = this.eventsService.getFriendMarkers();
+  }
   styles: MapTypeStyle[] = [
     {
         "featureType": "administrative",
@@ -263,4 +285,10 @@ export class AppComponent {
         ]
     }
 ];
+
+}
+
+interface marker {
+  lat: number;
+  lng: number;
 }

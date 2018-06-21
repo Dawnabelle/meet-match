@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
+import { GoogleMapsAPIWrapper } from '@agm/core';
+import { GoogleMap, Marker } from '@agm/core/services/google-maps-types';
 
+declare const google;
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
   private events = new Object();
   private dates : Date[] = [];
-  private eventCount : number = 0;
+  private friendMarkers: marker[] = [];
+  private userMarkers: marker[] = [];
+  private markers: marker[] = [];
 
   constructor() { }
 
@@ -28,16 +33,30 @@ export class EventsService {
           this.events[event.local_date.toString()] = [event];
           this.dates.push(event.local_date);
       }
-      this.eventCount = this.eventCount + 1;
+      if (event.local_date.toString().match('Mon') != null && event.local_date.toString().match('Mon').length > 0) {
+        this.userMarkers.push({
+          "lat":event.venue.lat,
+          "lng":event.venue.lon,
+          "iconUrl": "./assets/user.png"
+        });
+      } else if (event.local_date.toString().match('Sun') != null && event.local_date.toString().match('Sun').length > 0) {
+        this.friendMarkers.push({
+          "lat":event.venue.lat,
+          "lng":event.venue.lon,
+          "iconUrl": "./assets/friend.png"
+        });
+      } else {
+        this.markers.push({
+          "lat":event.venue.lat,
+          "lng":event.venue.lon,
+          "iconUrl": "./assets/marker.png"
+        });
+      }
     }
   }
 
   getEvents(){
     return this.events;
-  }
-
-  getEventCount(){
-    return this.eventCount;
   }
 
   getDates(){
@@ -75,4 +94,21 @@ export class EventsService {
     return keyPresent;
   }
 
+  getMarkers(){
+    return this.markers;
+  }
+
+  getUserMarkers(){
+    return this.userMarkers;
+  }
+
+  getFriendMarkers(){
+    return this.friendMarkers;
+  }
+}
+
+interface marker {
+  lat: number;
+  lng: number;
+  iconUrl: string;
 }
