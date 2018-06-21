@@ -3,17 +3,5 @@
   <div class="event-date">
     <h2> {{ date | date }}</h2>
   </div>
-    <div routerLink="/details/{{ event.id }}" class="event-info" *ngFor="let event of savedEvents[date]" (click)="goToDetailPage(event)">
-        <div class="event-title">
-          <h4>{{ event.name }}</h4>
-        </div>
-        <div class="event-location-time">
-          <div class="location">
-            <h4>{{ event.venue.name}}</h4>
-          </div>
-          <div class="time">
-            <h4>{{ event.local_date | date}}</h4>
-          </div>
-        </div>
-    </div>
+  <app-event *ngFor="let event of savedEvents[date]" [childEvent]="event"></app-event>
 </div>

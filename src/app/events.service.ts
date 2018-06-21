@@ -9,9 +9,13 @@ declare const google;
 export class EventsService {
   private events = new Object();
   private dates : Date[] = [];
+<<<<<<< HEAD
   private friendMarkers: marker[] = [];
   private userMarkers: marker[] = [];
   private markers: marker[] = [];
+=======
+  private eventCount : number = 0;
+>>>>>>> master
 
   constructor() { }
 
@@ -57,6 +61,10 @@ export class EventsService {
 
   getEvents(){
     return this.events;
+  }
+
+  getEventCount(){
+    return this.eventCount;
   }
 
   getDates(){

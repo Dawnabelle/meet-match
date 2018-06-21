@@ -24,5 +24,4 @@ export class DetailsComponent implements OnInit {
       this.eventId = urlParameters['id'];
     });
   }
-
 }
