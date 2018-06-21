@@ -1,41 +1,21 @@
-## Meet Match
-A little info about your project and/ or overview that explains **what** the project is about.
-
+<img src="src/assets/mm-logo-orange-copy.png" width=250px>
 ## Motivation
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+A group project to demonstrate backend and front end development skills. Meet-ups are something we enjoy as tech newbs. An app like this would help friends find each other when looking for relevant meet-ups.
 
 ## Screenshots
-Include logo/demo screenshot etc.
+<img src="src/assets/myevents.png" width=300px>
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+ * clone or download from this repository
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+API keys from Meetup and Google Maps
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+* run npm install
+* obtain API keys from Meetup and Google Maps
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Development server
 
@@ -64,7 +44,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This is a thing that can happen.
 
 ## Built With
 * [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0
@@ -73,16 +53,15 @@ Add additional notes about how to deploy this on a live system
 * [GSON](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Features
-What makes your project stand out?µ
+A friend finding component to a meet-up site- friends show up as map markers.
 
 ## Authors
 
 * **Johnny Alt** - *Angular, server API* - [johnnyrayalt](https://github.com/johnnyrayalt)
 * **Pablo Barreyro** - *Angular* - [Pabarreyro](https://github.com/Pabarreyro)
 * **Sean McDermott** - *UI/UX* - [seanulus](https://github.com/seanulus)
-* **Dawn Mott** - *UI/UX* - [Dawnabelle](https://github.com/Dawnabelle)
+* **Dawn Mott** - *UI/UX* - [Dawnabelle](https://github.com/Dawnabelle) :sunrise_over_mountains:
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -90,5 +69,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Staff and fellow students for support and encouragement
-* [Inspiration]
+Staff and fellow students for support and encouragement
