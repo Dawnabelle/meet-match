@@ -6,7 +6,7 @@
   text-align: center;
   margin-top: 50px;
   float: left;
-  @include mQ(600px) {
+  @include mQ(850px) {
     float: none;
     width: 50%;
     margin: auto;
@@ -23,13 +23,10 @@
     width:  200px;
     height: 200px;
     margin-top: 15px;
-    background-repeat:   no-repeat;
+    padding-bottom: 15px;
+    background-repeat: no-repeat;
     background-size: auto;
     overflow: hidden;
-    // @include mQ(600px) {
-    //   border-radius: 0;
-    //   width: 50%;
-    // }
 
     &:hover {
       transform: scale(1.1) rotate(360deg);
