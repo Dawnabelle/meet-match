@@ -11,12 +11,9 @@ import { DetailsComponent } from './details/details.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserEventsComponent } from './user-events/user-events.component';
-<<<<<<< HEAD
 import { MapComponent } from './map/map.component';
 import { GoogleMapsAPIWrapper } from '@agm/core';
-=======
 import { EventComponent } from './event/event.component';
->>>>>>> master
 
 
 
@@ -31,13 +28,8 @@ import { EventComponent } from './event/event.component';
     AppRoutingModule,
     HttpClientModule
   ],
-<<<<<<< HEAD
   providers: [GoogleMapsAPIWrapper],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent, MapComponent],
-=======
-  providers: [],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent, EventComponent],
->>>>>>> master
+  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent, MapComponent, EventComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
