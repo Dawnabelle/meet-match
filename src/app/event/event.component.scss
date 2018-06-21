@@ -1,0 +1,59 @@
+@import '../../sass/abstracts/mixins';
+@import '../../sass/abstracts/variables';
+
+.event-info {
+  display: flex;
+  margin:  15px auto;
+  flex-direction: column;
+  width: 88vw;
+  background-color: #EAA47B;
+  @include mQ(700px) {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .top-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bottom-details {
+    padding: 15px 60px 50px 60px;
+  }
+
+  h4, h5 {
+    margin: 10px;
+  }
+
+  .event-title {
+    padding-left: 20px;
+    h4 {
+      font-weight: bold;
+      }
+
+    @include mQ(700px) {
+      // display: flex;
+      // flex-wrap: wrap;
+      line-height: 1.4em;
+    }
+  }
+
+  .event-location-time {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    padding-right: 20px;
+    @include mQ(700px) {
+    justify-content: space-around;
+    // padding-left: 25px;
+    width: 88vw;
+    }
+
+    p:hover {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
