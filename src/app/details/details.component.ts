@@ -23,7 +23,6 @@ export class DetailsComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.eventId = urlParameters['id'];
     });
-    this.eventToDisplay = this.eventsService.getEventById(this.eventId);
   }
 
 }
