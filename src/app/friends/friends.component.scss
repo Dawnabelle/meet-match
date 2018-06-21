@@ -18,8 +18,10 @@
   }
 
   img {
-    width: 50%;
+    height: 200px;
+    width: auto;
     border-radius: 50%;
+    object-fit: fill;
     // @include mQ(600px) {
     //   border-radius: 0;
     //   width: 50%;
