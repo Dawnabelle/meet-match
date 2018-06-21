@@ -1,9 +1,25 @@
-<div class="friend">
+<div class="" *ngFor="let list of users">
+  <div class="friend" *ngFor="let user of list">
+    <div class="friend-name">
+      <a routerLink="/my-events/">
+        <h3>{{user.name}}</h3>
+      </a>
+      <h5 *ngIf="user.name == 'Woll Smoth'"><em>Me</em></h5>
+    </div>
+    <div class="friend-photo">
+      <a routerLink="/my-events">
+        <img *ngIf="user.photo == 'n/a'" src="../assets/moon.jpg" alt="{{user.name}}">
+        <img *ngIf="user.photo != 'n/a'" src="{{user.photo}}" alt="{{user.name}}">
+      </a>
+    </div>
+  </div>
+</div>
+<!-- <div class="friend">
   <div class="friend-name">
-    <a routerLink="/my-events"><h3>Sean Dawn</h3></a>
+    <h3>Sally Moon</h3>
   </div>
   <div class="friend-photo">
-    <a routerLink="/my-events"><img src="../assets/moon.jpg" alt="Sally"></a>
+    <img src="../assets/moon.jpg" alt="Sally">
   </div>
 </div>
 <div class="friend">
@@ -21,12 +37,4 @@
   <div class="friend-photo">
     <img src="../assets/moon.jpg" alt="Sally">
   </div>
-</div>
-<div class="friend">
-  <div class="friend-name">
-    <h3>Sally Moon</h3>
-  </div>
-  <div class="friend-photo">
-    <img src="../assets/moon.jpg" alt="Sally">
-  </div>
-</div>
+</div> -->
