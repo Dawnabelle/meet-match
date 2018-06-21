@@ -43,3 +43,16 @@
     color: #FCD0A1;
   }
 }
+.friend-photo-1 {
+  img {
+    border-radius: 50%;
+    object-fit:cover;
+    width:  30px;
+    height: 30px;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    overflow: hidden;
+  }
+}
