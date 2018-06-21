@@ -1,4 +1,4 @@
-<img src="src/assets/mm-logo-orange-copy.png" width=250px>
+<img src="src/assets/oregon-line-mm.png" width=250px>
 ## Motivation
 A group project to demonstrate backend and front end development skills. Meet-ups are something we enjoy as tech newbs. An app like this would help friends find each other when looking for relevant meet-ups.
 
