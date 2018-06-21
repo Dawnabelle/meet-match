@@ -17,6 +17,7 @@ export class EventsComponent implements OnInit {
   private dates: Date[];
   private users: Object[];
 
+
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -34,5 +35,4 @@ export class EventsComponent implements OnInit {
   goToDetailPage(clickedEvent: object) {
     this.router.navigate(['details/', clickedEvent['id']])
   }
-
 }

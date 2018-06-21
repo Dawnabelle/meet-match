@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class EventsService {
   private events = new Object();
   private dates : Date[] = [];
+  private eventCount : number = 0;
 
   constructor() { }
 
@@ -27,11 +28,16 @@ export class EventsService {
           this.events[event.local_date.toString()] = [event];
           this.dates.push(event.local_date);
       }
+      this.eventCount = this.eventCount + 1;
     }
   }
 
   getEvents(){
     return this.events;
+  }
+
+  getEventCount(){
+    return this.eventCount;
   }
 
   getDates(){

@@ -11,6 +11,7 @@ import { DetailsComponent } from './details/details.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserEventsComponent } from './user-events/user-events.component';
+import { EventComponent } from './event/event.component';
 
 
 
@@ -26,7 +27,7 @@ import { UserEventsComponent } from './user-events/user-events.component';
     HttpClientModule
   ],
   providers: [],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent],
+  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent, EventComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
