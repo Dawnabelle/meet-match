@@ -1,22 +1,39 @@
+import { NgModule, Component, OnInit, Directive, Input, EventEmitter } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component, OnInit } from '@angular/core';
+import { GoogleMapsAPIWrapper } from '@agm/core';
+import { GoogleMap, Marker } from '@agm/core/services/google-maps-types';
+import { Observable } from 'rxjs';
+
 import { ApiService } from './api.service';
+import { EventsService } from './events.service';
+import { UserService } from './user.service';
 
 import { AgmCoreModule, MapTypeStyle } from '@agm/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Map works!';
-  lat: number = 45.5122;
-  lon: number = -122.6587;
-  epiLat: number = 45.5206;
-  epiLon: number = -122.6774;
+export class AppComponent implements OnInit {
 
-  constructor(private apiService : ApiService) {  }
+  private savedEvents : Object;
+  private users: Object[];
+
+  zoom: number = 4;
+  lat: number = 45.5122;
+  lng: number = -122.6587;
+  markers: marker[] =[]; // Populate with Event Id, Color, lat lng
+
+  constructor(
+  private apiService: ApiService,
+  private eventsService: EventsService,
+  private userService : UserService) {  }
+
+
+  ngOnInit() {
+  }
 
   styles: MapTypeStyle[] = [
     {
@@ -263,4 +280,11 @@ export class AppComponent {
         ]
     }
 ];
+
+}
+
+interface marker {
+  lat: number;
+  lng: number;
+
 }
