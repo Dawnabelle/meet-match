@@ -18,10 +18,14 @@
   }
 
   img {
-    height: 200px;
-    width: auto;
     border-radius: 50%;
-    object-fit: fill;
+    object-fit:cover;
+    width:  200px;
+    height: 200px;
+    margin-top: 15px;
+    background-repeat:   no-repeat;
+    background-size: auto;
+    overflow: hidden;
     // @include mQ(600px) {
     //   border-radius: 0;
     //   width: 50%;
