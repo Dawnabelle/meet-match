@@ -1,40 +1,45 @@
 import { NgModule, Component, OnInit, Directive, Input, EventEmitter } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleMapsAPIWrapper } from '@agm/core';
-import { GoogleMap, Marker } from '@agm/core/services/google-maps-types';
+import { AgmCoreModule, MapTypeStyle } from '@agm/core';
 import { Observable } from 'rxjs';
 
 import { ApiService } from './api.service';
 import { EventsService } from './events.service';
 import { UserService } from './user.service';
 
-import { AgmCoreModule, MapTypeStyle } from '@agm/core';
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [ApiService]
 })
 export class AppComponent implements OnInit {
 
   private savedEvents : Object;
   private users: Object[];
 
-  zoom: number = 4;
-  lat: number = 45.5122;
+  zoom: number = 13;
+  lat: number = 45.522;
   lng: number = -122.6587;
-  markers: marker[] =[]; // Populate with Event Id, Color, lat lng
+  markers: marker[] = [];
+  friendMarkers: marker[] = [];
+  userMarkers: marker[] = [];
+
 
   constructor(
-  private apiService: ApiService,
-  private eventsService: EventsService,
-  private userService : UserService) {  }
+    private apiService: ApiService,
+    private eventsService: EventsService,
+    private userService : UserService
+) {  }
 
 
   ngOnInit() {
+    this.apiService.saveEvents();
+    this.markers = this.eventsService.getMarkers();
+    this.userMarkers = this.eventsService.getUserMarkers();
+    this.friendMarkers = this.eventsService.getFriendMarkers();
   }
-
   styles: MapTypeStyle[] = [
     {
         "featureType": "administrative",
@@ -286,5 +291,4 @@ export class AppComponent implements OnInit {
 interface marker {
   lat: number;
   lng: number;
-
 }

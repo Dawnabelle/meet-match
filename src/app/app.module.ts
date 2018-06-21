@@ -11,6 +11,8 @@ import { DetailsComponent } from './details/details.component';
 import { FriendsComponent } from './friends/friends.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserEventsComponent } from './user-events/user-events.component';
+import { MapComponent } from './map/map.component';
+import { GoogleMapsAPIWrapper } from '@agm/core';
 
 
 
@@ -25,8 +27,8 @@ import { UserEventsComponent } from './user-events/user-events.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
-  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent],
+  providers: [GoogleMapsAPIWrapper],
+  declarations: [ AppComponent, EventsComponent, DetailsComponent, FriendsComponent, UserEventsComponent, MapComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

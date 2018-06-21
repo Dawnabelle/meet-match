@@ -25,10 +25,11 @@ export class EventsComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.saveEvents();
-    this.apiService.saveUsers();
+    // this.apiService.saveUsers();
     this.savedEvents = this.eventsService.getEvents();
     this.dates = this.eventsService.getDates();
-    this.users = this.userService.getUsers();
+    // this.users = this.userService.getUsers();
+    console.log(this.savedEvents);
   }
 
   goToDetailPage(clickedEvent: object) {
