@@ -9,7 +9,8 @@ A group project to demonstrate backend and front end development skills. Meet-up
  * clone or download from this repository
 
 ### Prerequisites
-API keys from Meetup and Google Maps
+API keys from Meetup and Google Maps<br>
+[View our backend/custom database repo](https://github.com/johnnyrayalt/pdxmeetupsserver)
 
 ### Installing
 
