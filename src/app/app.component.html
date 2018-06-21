@@ -10,8 +10,10 @@
 <!-- <h1>{{title}}</h1> -->
 
 <div class="map">
-  <agm-map [latitude]="lat" [longitude]="lon" [styles]="styles">
-    <agm-marker [latitude]="epiLat" [longitude]="epiLon"></agm-marker>
+  <agm-map [latitude]="lat" [longitude]="lng" [styles]="styles">
+    <agm-marker *ngFor="let marker of markers | async"
+    [latitude]="marker.lat"
+    [longitude]="marker.lng"></agm-marker>
   </agm-map>
 </div>
 
