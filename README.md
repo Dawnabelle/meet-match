@@ -59,8 +59,8 @@ A friend finding component to a meet-up site- friends show up as map markers.
 
 ## Authors
 
-* **Johnny Alt** - *Angular, server API* - [johnnyrayalt](https://github.com/johnnyrayalt)
-* **Pablo Barreyro** - *Angular* - [Pabarreyro](https://github.com/Pabarreyro)
+* **Johnny Alt** - *Backend/API* - [johnnyrayalt](https://github.com/johnnyrayalt)
+* **Pablo Barreyro** - *App Architecture* - [Pabarreyro](https://github.com/Pabarreyro)
 * **Sean McDermott** - *UI/UX* - [seanulus](https://github.com/seanulus)
 * **Dawn Mott** - *UI/UX* - [Dawnabelle](https://github.com/Dawnabelle) :sunrise_over_mountains:
 
